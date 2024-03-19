@@ -1,0 +1,127 @@
+.pre-review, .reviews{
+    display:flex;
+}
+
+.image{
+    display: inline;
+    margin-right: 15px;
+}
+
+.image img{
+    width: 250px;
+    height: 400px;
+}
+
+.recommended{
+    width: 250px;
+    margin-right: 15px;
+}
+
+.recommended h1{
+    font-size:x-large;
+}
+
+.recommended img{
+    width: 50px;
+    height: 80px;
+}
+
+.info{
+    width: 70%;
+}
+
+.info h1{
+    margin: 0px;
+}
+
+.add-to-watched, .remove-watched{
+    padding: 10px;
+    font-size: 24px;
+}
+
+.add-to-watched:hover{
+    background-color: #0b4f6c;
+    color: #fbfbff;
+}
+
+.remove-watched:hover{
+    color: #0b4f6c;
+    background-color: #fbfbff;
+}
+
+.reviews h3{
+    margin: 5px 0px 5px 0px;
+}
+
+#reviews{
+    width:70%;
+}
+
+#submit-review{
+    padding:10px;
+}
+
+#full-review{
+    display: none;
+}
+
+.slider{
+    width:25%;
+}
+
+.score-container{
+
+}
+
+.score{
+    font-size: 24px;
+}
+
+#basic-review-btn{
+    display: none;
+}
+
+#review-title{
+    display: block;
+    font-size: 20px;
+    width:50%;
+}
+
+#review-body{
+    display: block;
+    margin: 5px 0px;
+    resize: none;
+    width: 90%;
+}
+
+.submit-review-btn{
+    padding: 5px;
+    position: relative;
+    margin:5px 5px 0px 0px;
+    font-size: 24px;
+}
+
+.submit-review-btn:hover{
+    background-color: #0b4f6c;
+    color: #fbfbff;
+}
+
+.review{
+    padding: 5px 0px;
+    margin: 15px 0px;
+    border-style: none none dashed none;
+}
+
+.review p{
+    margin:5px 0px;
+}
+
+.restricted{
+    display:none;
+}
+
+@media only screen and (max-width: 730px) {
+    .pre-review, .reviews{
+        flex-wrap: wrap;
+    }
+}    

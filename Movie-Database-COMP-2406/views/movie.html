@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/master.css">
+    <link rel="stylesheet" href="../styles/movie.css">
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/movie.js"></script>
+    <title id="title">Movie</title>
+</head>
+
+<body onload="init()">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE
+            PROJECT</a>
+        <span class="navigation">
+            <form action="/movies">
+                
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="submit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="#"><button id="login" type="button" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" type="button" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+        </span>
+    </div>
+    <div id="main" class="light-bg light-bg-text">
+        <div class="pre-review">
+            <div class="image">
+                <img id="poster" class="poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg">
+            </div>
+            <div class="info">
+                <h1 id="movie-title">The Godfather: Part II</h1>
+                <p><span id="duration" class="info">3h 22</span> | <span id="rating" class="info">R</span> | <span
+                        id="release=year" class="info">1974</span></p>
+                <span id="review-overview" class="info score">Unrated</span>
+                <p class="genres info" id="genres"><a href="#">Crime</a>, <a href="#">Drama</a></p>
+                <p class="directors" id="directors">Directors: <a href="#">Francis Ford Coppola</a>
+                </p>
+                <p class="actors" id="actors">Actors: <a href="#">Al Pacino</a>, <a href="#">Robert Duvall</a>, <a
+                        href="#">Diane Keaton</a>, <a href="#">Robert De Niro</a></p>
+                <p class="writers" id="writers">Writers: <a href="#">Francis Ford Coppola</a>, <a href="#">Mario
+                        Puzo</a></p>
+                <p class="plot" id="plot">The early life and career of Vito Corleone in 1920s New York City is
+                    portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.
+                </p>
+                <button id="add-watched" class="btn-style light-bg light-bg-text add-to-watched">+ Add To
+                    Watched</button>
+                <button id="remove-watched" class="btn-style dark-bg dark-bg-text remove-watched">- Remove
+                    Watched</button>
+            </div>
+        </div>
+        <div class="reviews">
+            <div class="recommended">
+                <h2>RECOMMENDED</h2>
+                <table id="recommended">
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZmUyOTE4YmItN2E0Zi00M2ViLWIxMTctMmZhMDRhMDZhOWZlXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="/movies/example-id">An American Tail: Fievel Goes West</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZTNkYmIwYjAtMDcyNy00MGYwLWJkYTAtODAyNDJjZTdmNGYxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="/movies/example-id">House of Games</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="reviews">
+                <h2>REVIEWS</h2>
+                <div id="submit-review" class="dark-bg dark-bg-text">
+                    <h3>Submit a Review</h3>
+                    <div class="score-container">
+                        <input type="range" min="1" max="10" value="5" name="score" id="score" class="slider">
+                        <span id="user-score" class="score"></span><span class="score">/10</span>
+                    </div>
+                    <div id="full-review">
+                        <input type="hidden" id="review-type" name="review-type" value="basic">
+                        <input type="text" id="review-title" name="review-title" class="" placeholder="Enter Review Title:">
+                        <textarea id="review-body" name="review-body" class="" rows="15" placeholder="Enter Review Body:"></textarea>
+                    </div>
+                    <div class="review-buttons">
+                        <button id="full-review-btn" type="button" class="btn-style light-bg light-bg-text submit-review-btn">Full Review</button>
+                        <button id="basic-review-btn" type="button" class="btn-style light-bg light-bg-text submit-review-btn">Basic Review</button>
+                        <button id="submit-review-btn" type="button" class="btn-style light-bg light-bg-text submit-review-btn">Submit</button>
+                    </div>
+                </div>
+                <div id="submitted-reviews">
+                    <div class="review">
+                        <h3 class="review-title">A Must See</h3>
+                        <p>By: <a href="#">Josh10</a></p>
+                        <span class="score">10</span><span class="score">/10</span>
+                        <p>Loved this movie!</p>
+                    </div>
+                    <div class="review">
+                        <p>By: <a href="#">Alex15</a></p>
+                        <span class="score">7</span><span class="score">/10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

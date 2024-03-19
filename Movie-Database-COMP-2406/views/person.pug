@@ -1,0 +1,42 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/person.css"
+    )
+    script(src="/header.js")
+    script(src="/person.js")
+    title #{n}
+block page-nav
+    include ./partials/header.pug
+block main
+    div.personInfo
+        div.colab
+            h3 COLLABORATORS
+            ol(id="colabPeople")                    
+        div.person
+            p.personName #{n}
+            button(
+                id="follow"
+                type="button"
+                class="dark-bg dark-bg-text"
+            ) #{follow?"unfollow":"follow"}
+    div.apperance
+        h1 ACTED:
+        table(
+            id="acted"
+            class="movieList"
+        )
+    div.apperance
+        h1 DIRECTED:
+        table(
+            id="directed"
+            class="movieList"
+        )
+    div.apperance
+        h1 WROTE:
+        table(
+            id="wrote"
+            class="movieList"
+        )
+

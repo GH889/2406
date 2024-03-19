@@ -1,0 +1,47 @@
+div#header(
+    class="dark-bg dark-bg-text"
+)
+    a(
+        id="sitetitle"
+        href="/"
+        class="dark-bg dark-bg-text"
+    )
+        span(class="highlighted-text") DIONYSUS 
+        | MOVIE PROJECT 
+    span.navigation 
+        form(
+            id="search"
+            action="/movies"
+        )
+            input(
+                id="title" 
+                type="text" 
+                name="title" 
+                placeholder="Search movies by title..."
+            )
+            input(
+                id="page"
+                type="hidden"
+                name="page"
+                value="1"
+            )
+            button(
+                id="btnsubmit" 
+                type="submit"
+                class="btn-style header-btn dark-bg dark-bg-text"
+            ) SEARCH
+            if loggedIn
+                a(href="/users/" + uid)
+                    button(
+                        id="profile" type="button" class="btn-style header-btn dark-bg dark-bg-text"
+                    ) PROFILE
+                a(href="/logout")
+                    button(
+                        id="logout" type="button" class="btn-style header-btn dark-bg dark-bg-text"
+                    ) LOGOUT
+            else
+                a(href="/login")
+                    button(
+                        id="login" type="button" class="btn-style header-btn dark-bg dark-bg-text"
+                    ) LOGIN
+            

@@ -1,0 +1,95 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/results.css"
+    )
+    script(src="/header.js")
+    script(src="/results.js")
+    title Search Results
+block page-nav
+    include ./partials/header.pug
+block main
+    input(
+        type="hidden"
+        id="curr-page"
+        value=page
+    )
+    form#advanced-search(action="/movies")
+        div.search-bars
+            input(
+                id="advanced-title" 
+                type="text" 
+                name="title" 
+                placeholder="Search movies by title..."
+            )
+            input(
+                id="genre" 
+                type="text" 
+                name="genre" 
+                placeholder="Search movies by genre..."
+            )
+            input(
+                id="person" 
+                type="text" 
+                name="person" 
+                placeholder="Search movies by person..."
+            )
+        div.filters
+            select(
+                name="rating" id="rating"
+            )
+                option(value="" disabled selected) Rating
+                each rating in ["G", "PG", "PG-13", "R", "NC-17", "Not Rated"]
+                    option(value=rating) #{rating}
+            select(
+                name="year" id="year"
+            )
+                option(value="" disabled selected) Year
+                each year in [1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020]
+                    option(value=year) #{year + "-" + (year+9)}
+        input(
+            id="page"
+            type="hidden"
+            name="page"
+            value="1"
+        )
+        div.submit-search
+            button(
+                id="btnsubmit" 
+                type="submit"
+                class="btn-style submit-search dark-bg dark-bg-text"
+            ) SEARCH
+
+    table#results
+        each movie in movies
+            tr 
+                td 
+                    a(href="/movies/"+movie.mid)
+                        img(src=movie.poster)
+                td 
+                    a(href="/movies/"+movie.mid) #{movie.title}
+                    p #{movie.plot}
+        else 
+            tr
+                td
+                td No movies found. Try a different query?
+
+    div.pages
+        if page > 1
+            - let url = "/movies?page=" + (page - 1)
+            - if(qstring.length > 0){url += "&" + qstring;}
+            a(href=url)
+                button(
+                    id = "prev-page"
+                    class="btn-style submit-search dark-bg dark-bg-text"
+                ) PREVIOUS PAGE
+        | #{page}
+        if movies.length >= 10
+            - let url = "/movies?page=" + (page + 1)
+            - if(qstring.length > 0){url += "&" + qstring;}
+            a(href=url)
+                button(
+                    id = "next-page"
+                    class="btn-style submit-search dark-bg dark-bg-text"
+                ) NEXT PAGE

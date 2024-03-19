@@ -1,0 +1,39 @@
+.userInput{
+    text-align: center;
+    padding:50px;
+}
+
+.halfLeft{
+    width: 47%;
+    min-width: 300px;
+    padding: 1%;
+    margin-bottom: 40px;
+    float: left;
+}
+
+.halfRight{
+    width: 47%;
+    min-width: 300px;
+    padding: 1%;
+    display:inline-block;
+    margin-bottom: 40px;;
+}
+
+.input{
+    margin: 25px;
+}
+
+.areaInput{
+    resize: none;
+    width: 90%;
+    height: 140px;
+}
+
+.date{
+    width: 54px;
+    margin: 2px;
+}
+
+p{
+    word-wrap: break-word;
+}

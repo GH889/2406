@@ -1,0 +1,32 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/home.css"
+    )
+    script(src="header.js")
+    title Home
+block page-nav
+    include ./partials/header.pug
+block main
+    div.movie-display
+        h1 New Movies 
+        div.movie-list#new-movie-list
+            for movie in releases 
+                a(href="/movies/"+movie.mid)
+                    img(
+                        src=movie.poster
+                        class="movie-img"
+                        alt=movie.title
+                    )
+
+    div.movie-display
+        h1 New Database Additions
+        div.movie-list#new-add-list
+            for movie in adds
+                a(href="/movies/"+movie.mid)
+                    img(
+                        src=movie.poster
+                        class="movie-img"
+                        alt=movie.title
+                    )

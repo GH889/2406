@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+</head>
+<body onload="init()">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE PROJECT</a>
+        <span class="navigation">
+            <form action="/movies">
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="submit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="#"><button id="login" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+        </span>
+    </div>
+    
+    
+    <div id="main" class="light-bg light-bg-text">
+        <div class="userInput">
+            <div class="input">
+                <lable>Username: </lable><br>
+                <input type="text" id="loginUser">
+            </div>
+            <div class="input">
+                <lable>Password: </lable><br>
+                <input type="password" id="LoginPass">
+            </div>
+            <button id="submitLogin" class="header-btn dark-bg dark-bg-text">Log in</button>
+            <button id="submitNewUser" class="header-btn dark-bg dark-bg-text">Register</button>
+        </div>
+        <div id="errorReport">
+        </div>    
+    </div>
+    
+</body>
+</html>

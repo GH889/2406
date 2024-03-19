@@ -1,0 +1,135 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/movie.css"
+    )
+    script(src="/header.js")
+    script(src="/movie.js")
+    title #{title}
+block page-nav
+    include ./partials/header.pug
+block main
+    div.pre-review
+        div.image 
+            img.poster(
+                id="poster"
+                src=movie.poster
+            )
+        div.info
+            h1#movie-title #{movie.title}
+            p 
+                if movie.runtime > 1
+                    span.info #{movie.runtime} mins 
+                else
+                    span.info Unknown Runtime
+                | &#8214; 
+                span.info #{movie.rating} 
+                | &#8214; 
+                if movie.year > 1
+                    span.info #{movie.year}
+                else
+                    span.info Unknown Year
+            span#review-overview(
+                class="info score"
+            ) Unreviewed
+            p(class="genres info")
+                for genreName in movie.genre 
+                    a(
+                        href="/movies?genre="+genreName
+                    ) #{genreName} 
+            p.directors Director(s): 
+                for d in movie.director
+                    a(
+                        href="/people/"+d.pid
+                    ) #{d.name} / 
+            p.actors Actors: 
+                for a in movie.actors
+                    a(
+                        href="/people/"+a.pid
+                    ) #{a.name} / 
+            p.writers Writer(s): 
+                for w in movie.writer
+                    a(
+                        href="/people/"+w.pid
+                    ) #{w.name} / 
+            p.plot #{movie.plot}
+            if loggedIn
+                button#add-watched(
+                    class="btn-style light-bg light-bg-text add-to-watched"
+                    class= inWatchList? "restricted": ""
+                ) + Add To Watched 
+                button#remove-watched(
+                    class="btn-style dark-bg dark-bg-text remove-watched"
+                    class= inWatchList? "" : "restricted"
+                ) - Remove Watched 
+    div.reviews
+        div.recommended 
+            h2 RECOMMENDED
+            table#recommended
+        div#reviews
+            h2 REVIEWS
+            div#submit-review(
+                class="dark-bg dark-bg-text"
+            )
+                h3 Submit a Review
+                div.score-container 
+                    input(
+                        type="range"
+                        min="1"
+                        max="10"
+                        value="5"
+                        name="score"
+                        id="score"
+                        class="slider"
+                    )
+                    span(
+                        id="user-score" 
+                        class="score"
+                    )
+                    span.score /10
+                div#full-review
+                    input(
+                        type="hidden"
+                        id="review-type"
+                        name="review-type"
+                        value="basic"
+                    )
+                    input(
+                        type="text"
+                        id="review-title"
+                        name="review-title" 
+                        class="" 
+                        placeholder="Enter Review Title:"
+                    )
+                    textarea(
+                        id="review-body" 
+                        name="review-body" 
+                        class="" 
+                        rows="15" 
+                        placeholder="Enter Review Body:"
+                    )
+                div.review-buttons
+                    button(
+                        id="full-review-btn" 
+                        type="button" 
+                        class="btn-style light-bg light-bg-text submit-review-btn"
+                    ) Full Review
+                    button(
+                        id="basic-review-btn" 
+                        type="button" 
+                        class="btn-style light-bg light-bg-text submit-review-btn"
+                    ) Basic Review
+                    button(
+                        id="submit-review-btn" 
+                        type="button" 
+                        class="btn-style light-bg light-bg-text submit-review-btn"
+                    ) Submit
+
+            div#submitted-reviews
+
+            button(
+                id="more-reviews"
+                type="button"
+                class="btn-style dark-bg dark-bg-text"
+            ) Load more reviews

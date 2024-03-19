@@ -1,0 +1,25 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/addperson.css"
+    )
+    script(src="/header.js")
+    script(src="/addperson.js")
+    title Add Person
+block page-nav
+    include ./partials/header.pug
+block main
+    div.userInput
+        div.input
+            label New Person #[br]
+            input(
+                id="addPerson"
+                type="text"
+            )
+        button(
+            id="AddPersonButton"
+            type="button"
+            class="header-btn dark-bg dark-bg-text"
+        ) Submit
+    div.errorReturn

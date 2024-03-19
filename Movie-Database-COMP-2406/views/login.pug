@@ -1,0 +1,36 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/login.css"
+    )
+    script(src="/header.js")
+    script(src="/login.js")
+    title Login
+block page-nav
+    include ./partials/header.pug
+block main
+    div.userInput
+        div.input
+            label Username: #[br]
+            input(
+                id="loginUser"
+                type="text"
+            )
+        div.input
+            label Password: #[br]
+            input(
+                id="loginPass"
+                type="password"
+            )
+        button(
+            id="submitLogin"
+            type="button"
+            class="header-btn dark-bg dark-bg-text dualButton"
+        ) Log in
+        button(
+            id="submitNewUser"
+            type="button"
+            class="header-btn dark-bg dark-bg-text dualButton"
+        ) Register
+    div.errorReport

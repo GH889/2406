@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="person.css">
+    <title>Person</title>
+</head>
+<body onload="init();">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE PROJECT</a>
+        <span class="navigation">
+            <form action="/movies">
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="submit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="#"><button id="login" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+        </span>
+    </div>
+
+    <div id="main" class="light-bg light-bg-text">
+        <div id="personInfo">
+            <div id="colab">
+                <h3>COLLABORATRS</h3>
+                <ol id="colabPeople">
+                    <li><a href="#">Robert</a></li>
+                    <li><a href="#">Owen</a></li>
+                    <li><a href="#">Matt</a></li>
+                    <li><a href="#">Farhan</a></li>
+                    <li><a href="#">Cody</a></li>
+                </ol>
+            </div>
+            <div id="person">
+                <p id="personName">Jacky Liang</p>
+                <button id="follow" class="dark-bg dark-bg-text">FOLLOW</button>
+            </div>
+        </div>
+        
+        <div>
+            <div class="apperance">
+                <h1>ACTED:</h1>
+                <table id="acted" class="movieList">
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZmUyOTE4YmItN2E0Zi00M2ViLWIxMTctMmZhMDRhMDZhOWZlXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="#">An American Tail: Fievel Goes West</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZTNkYmIwYjAtMDcyNy00MGYwLWJkYTAtODAyNDJjZTdmNGYxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="#">House of Games</a></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="apperance">
+                <h1>DIRECTED: </h1>   
+                <table id="dirceted" class="movieList">
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZmUyOTE4YmItN2E0Zi00M2ViLWIxMTctMmZhMDRhMDZhOWZlXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="#">An American Tail: Fievel Goes West</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZTNkYmIwYjAtMDcyNy00MGYwLWJkYTAtODAyNDJjZTdmNGYxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="#">House of Games</a></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="apperance">
+                <h1>WROTE:</h1>
+                <table id="wrote" class="movieList">
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZmUyOTE4YmItN2E0Zi00M2ViLWIxMTctMmZhMDRhMDZhOWZlXkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="#">An American Tail: Fievel Goes West</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BZTNkYmIwYjAtMDcyNy00MGYwLWJkYTAtODAyNDJjZTdmNGYxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg">
+                        </td>
+                        <td><a href="#">House of Games</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+ 
+</body>
+</html>

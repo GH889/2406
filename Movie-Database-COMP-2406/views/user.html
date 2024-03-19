@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="user.css">
+    <script src="header.js"></script>
+    <script src="domManip.js"></script>
+    <script src="user.js"></script>
+    <title>User</title>
+</head>
+<body onload="init();">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE PROJECT</a>
+        <span class="navigation">
+            <form action="/movies">
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="submit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="/login"><button id="login" type="button" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" type="button" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+            
+        </span>
+    </div>
+    <div id="main" class="light-bg light-bg-text">
+        <div id="user-details">
+            <h1>USERNAME</h1>
+            <button class="btn-style dark-bg dark-bg-text follow-btn" id="follow-btn">FOLLOW</button>
+            <button class="btn-style dark-bg dark-bg-text unfollow-btn" id="unfollow-btn">UNFOLLOW</button>
+        </div>
+        <div id="tabmenu">
+            <div class="tab dark-bg dark-bg-text">
+                <button class="tablink btn-style" id="defaultOpen">Watch List</button>
+                <button class="tablink btn-style" onclick="openTab(event,'followed-people')">Followed People</button>
+                <button class="tablink btn-style" onclick="openTab(event,'followed-users')">Followed Users</button>
+                <button class="tablink btn-style" onclick="openTab(event,'recommended')">Recommended</button>
+                <button class="tablink btn-style" onclick="openTab(event,'reviews')">Reviews</button>
+                <button class="tablink btn-style" onclick="openTab(event,'followers')">Followers</button>
+                <button class="tablink btn-style" onclick="openTab(event,'manage')">Manage</button>
+            </div>
+            <div id="watchlist" class="tabcontent">
+                <h2>WATCH LIST</h2>
+                <div class="scrollable">
+                    <table id="watchtable" class="movielist">
+                    </table>
+                </div>
+            </div>
+            <div id="followed-people" class="tabcontent">
+                <h2>FOLLOWED PEOPLE</h2>
+                <div class="scrollable">
+                    <table id="peopletable">
+                    </table>
+                </div>
+            </div>
+            <div id="followed-users" class="tabcontent">
+                <h2>FOLLOWED USERS</h2>
+                <div class="scrollable">
+                    <table id="usertable">
+                    </table>
+                </div>
+            </div>
+            <div id="recommended" class="tabcontent">
+                <h2>RECOMMENDED</h2>
+                <div class="scrollable">
+                    <table id="recotable" class="movielist">
+                    </table>
+                </div>
+            </div>
+            <div id="reviews" class="tabcontent">
+                <h2>REVIEWS</h2>
+                <div class="scrollable">
+                    <div id="review-list">
+                    </div>
+                </div>
+            </div>
+            <div id="followers" class="tabcontent">
+                <h2>FOLLOWERS</h2>
+                <div class="scrollable">
+                    <div id="follower-list">
+                    </div>
+                </div>
+            </div>
+            <div id="manage" class="tabcontent">
+                <h2>MANAGE</h2>
+                <button class="btn-style dark-bg dark-bg-text" id="switch-contributing">SWITCH TO CONTRIBUTING USER</button>
+                <button class="btn-style dark-bg dark-bg-text" id="switch-basic">SWITCH TO BASIC USER</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/addMovie.css"
+    )
+    script(src="/header.js")
+    script(src="/addMovie.js")
+    title Add Movie
+block page-nav
+    include ./partials/header.pug
+block main
+    div.userInput
+        div.halfLeft
+            h1 INFO 
+            div.input
+                label Movie Title #[br]
+                input(
+                    type="text"
+                    id="movieTitle"
+                )
+            div.input
+                label Movie Release Date#[br]
+                input(
+                    type="text"
+                    class="date"
+                    id="year"
+                    placeholder="YYYY"
+                )
+                input(
+                    type="text"
+                    class="date"
+                    id="month"
+                    placeholder="MM"
+                )
+                input(
+                    type="text"
+                    class="date"
+                    id="day"
+                    placeholder="DD"
+                )
+            div.input
+                label Movie Runtime#[br]
+                input(
+                    type="text"
+                    id="runtime"
+                )
+            div.input
+                label Movie Rating#[br]
+                input(
+                    type="text"
+                    id="rating"
+                )
+            div.input
+                label Movie Poster#[br]
+                input(
+                    type="text"
+                    id="poster"
+                )
+            div.input
+                label Movie Plot#[br]
+                textarea(
+                    id="plot"
+                    class="areaInput"
+                )
+        div.halfRight
+            h1 STAFF 
+            div.input
+                label Add Writer#[br]
+                input(
+                    type="text"
+                    id="writer"
+                    list="names" 
+                )
+                p(id="writerList") []#[br]
+            div.input
+                label Add Director#[br]
+                input(
+                    type="text"
+                    id="director"
+                    list="names" 
+                )
+                p(id="directorList") []#[br]
+            div.input
+                label Add Actor#[br]
+                input(
+                    type="text"
+                    id="actor"
+                    list="names" 
+                )
+                p(id="actorList") []#[br]
+            div.input
+                label Add Genre#[br]
+                input(
+                    id="genre"
+                    type="text"
+                )
+                p(id="genreList") []#[br]
+            button(
+                id="AddStaff"
+                type="button"
+                class="header-btn dark-bg dark-bg-text input"
+            ) Update Lists
+        div
+            button(
+                id="submitMovie"
+                type="button"
+                class="header-btn dark-bg dark-bg-text input"
+            ) Submit
+            datalist(id="names")

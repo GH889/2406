@@ -1,0 +1,15 @@
+.userInput{
+    text-align: center;
+    padding: 100px;
+}
+
+.input{
+    margin: 25px;
+}
+
+.dualButton{
+    margin: 25px;
+}
+button{
+    min-width: 150px;
+}

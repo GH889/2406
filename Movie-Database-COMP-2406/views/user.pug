@@ -1,0 +1,136 @@
+extends layouts/mainLayout.pug
+block head
+    link(
+        rel="stylesheet"
+        href="/user.css"
+    )
+    script(src="/header.js")
+    script(src="/domManip.js")
+    if same
+        script(src="/userSame.js")
+    else 
+        script(src="/user.js")
+    title #{user.username}
+block page-nav
+    include ./partials/header.pug
+block main
+    div#user-details
+        h1 #{user.username}
+        if !same && loggedIn
+            button(
+                class="btn-style dark-bg dark-bg-text follow-btn" 
+                class=isFollowing ? "restricted" : ""
+                id="follow-btn"
+            ) FOLLOW 
+            button(
+                class="btn-style dark-bg dark-bg-text unfollow-btn"
+                class=isFollowing ? "" : "restricted" 
+                id="unfollow-btn"
+            ) UNFOLLOW
+    div#tabmenu
+        div(
+            class="tab dark-bg dark-bg-text"
+            class={sameUser: same}
+        )
+            button(
+                class="tablink btn-style" 
+                id="defaultOpen"
+            ) Watch List
+            -let btnList;
+            if same
+                - btnList = ["Followed People", "Followed Users", "Recommended", "Reviews", "Followers", "Notifications", "Manage"]
+            else 
+                - btnList = ["Followed People", "Followed Users", "Reviews", "Followers"]
+            for btn in btnList
+                button(
+                    class="tablink btn-style"
+                ) #{btn}
+        #watchlist(
+            class="tabcontent"
+            class={sameUser: same}
+        )
+            h2 WATCH LIST 
+            .scrollable 
+                table#watchtable(
+                    class="movielist"
+                )
+        #followed-people(
+            class="tabcontent"
+            class={sameUser: same}
+        )
+            h2 FOLLOWED PEOPLE
+            .scrollable 
+                table#peopletable
+        #followed-users(
+            class="tabcontent"
+            class={sameUser: same}
+        )
+            h2 FOLLOWED USERS 
+            .scrollable
+                table#usertable
+        if same
+            #recommended(
+                class="tabcontent"
+                class={sameUser: same}
+            )
+                h2 RECOMMENDED 
+                .scrollable 
+                    table#recotable(
+                        class="movielist"
+                    )
+        #reviews(
+            class="tabcontent"
+            class={sameUser: same}
+        )
+            h2 REVIEWS
+            .scrollable 
+                #review-list 
+        #followers(
+            class="tabcontent"
+            class={sameUser: same}
+        )
+            h2 FOLLOWERS
+            .scrollable 
+                #follower-list 
+        if same 
+            #notifications(
+                class="tabcontent"
+                class={sameUser: same}
+            )
+                h2 NOTIFICATIONS
+                button#wipe-notifs(
+                    class="btn-style dark-bg dark-bg-text manage-btn"
+                ) Delete Notifications
+                .scrollable 
+                    #notif-list
+            #manage(
+                class="tabcontent"
+                class={sameUser: same}
+            )
+                h2 MANAGE
+                button#switch-contributing(
+                    class="btn-style dark-bg dark-bg-text manage-btn"
+                    class= (user.userType === "contributing")? "restricted" : ""
+                    onclick="switchContributing('" + user.uid + "');"
+                ) SWITCH TO CONTRIBUTING USER
+                button#switch-basic(
+                    class="btn-style dark-bg dark-bg-text manage-btn"
+                    class= (user.userType === "contributing")? "" : "restricted"
+                    onclick="switchBasic('" + user.uid + "');"
+                ) SWITCH TO BASIC USER
+                .options
+                #add-movie(
+                    class= (user.userType === "contributing")? "" : "restricted"
+                )
+                    a(href="/movies/addForm") 
+                        button(
+                            class="btn-style dark-bg dark-bg-text manage-btn"
+                        ) ADD A MOVIE
+                #add-person(
+                    class= (user.userType === "contributing")? "" : "restricted"
+                )
+                    a(href="/people/addForm") 
+                        button(
+                            class="btn-style dark-bg dark-bg-text manage-btn"
+                        ) ADD A PERSON
+        

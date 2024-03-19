@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+    <title>Home</title>
+</head>
+<body onload="init()">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE PROJECT</a>
+        <span class="navigation">
+            <form action="/movies">
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="submit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="#"><button id="login" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+        </span>
+    </div>
+    <div id="main" class="light-bg light-bg-text">
+        <div class="movie-display">
+            <h1>New Movies</h1>
+            <div id="new-movie-list" class="movie-list">
+
+            </div>
+        </div>
+        <div class="movie-display">
+            <h1>New Database Additions</h1>
+            <div id="new-add-list" class="movie-list">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

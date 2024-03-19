@@ -1,0 +1,92 @@
+h1 {
+    display:inline-block;
+}
+
+.follow-btn, .unfollow-btn{
+    padding: 10px;
+    position:relative;
+    margin: 0px 10px;
+    top: -6px;
+}
+
+.follow-btn:hover{
+    background-color: #fbfbff;
+    color: #0b4f6c;
+}
+
+.unfollow-btn:hover{
+    background-color: #fbfbff;
+    color: #0b4f6c;
+}
+
+.movielist, #peopletable, #usertable{
+    width: 80%;
+}
+
+.movielist img{
+    width: 50px;
+    height: 80px;
+}
+
+.remove-btn{
+    padding: 15px;
+}
+
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    width: 30%;
+    height: 480px;
+    margin-right: 15px;
+}
+
+.tab button {
+    display: block;
+    padding: 22px 16px;
+    background-color: inherit;
+    color: inherit;
+    width: 100%;
+    outline: none;
+    height: 96px;
+}
+
+.tab button:hover{
+    background-color: #fbfbff;
+    color: #0b4f6c;
+}
+.tab button.highlighted-text{
+    background-color: #01baef;
+}
+
+.tabcontent{
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 95%;
+    border-left: none;
+    height: 480px;
+}
+
+.scrollable{
+    height:80%;
+    position: relative;
+    overflow-y: scroll;
+}
+
+.sameUser button{
+    height:auto;
+}
+
+.notif{
+    padding: 5px;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-color: #0b4f6c;
+}
+.manage-btn{
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.restricted{
+    display:none;
+}

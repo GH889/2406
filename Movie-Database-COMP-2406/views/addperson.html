@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="addperson.css">
+    <title>Add Person</title>
+</head>
+<body onload="init()">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE PROJECT</a>
+        <span class="navigation">
+            <form action="/movies">
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="submit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="#"><button id="login" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+        </span>
+    </div>
+    <div id="main" class="light-bg light-bg-text">
+        <div class="userInput">
+            <div class="input">
+                <lable>New Person</lable><br>
+                <input type="text" id="addPerson">
+            </div>
+            <button id="AddPersonButton" class="header-btn dark-bg dark-bg-text">ADD</button>
+        </div>
+        <div id="errorReturn"></div>
+    </div>
+
+</body>
+</html>

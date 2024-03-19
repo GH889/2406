@@ -1,0 +1,30 @@
+{
+  "name": "movie-database-comp-2406",
+  "version": "1.0.0",
+  "description": "Final project for COMP 2406, Winter 2021 (Owen Brouse, Robert Babaev)",
+  "main": "server.js",
+  "scripts": {
+    "datagen": "node dataGen.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApprenticeofEnder/Movie-Database-COMP-2406.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApprenticeofEnder/Movie-Database-COMP-2406/issues"
+  },
+  "homepage": "https://github.com/ApprenticeofEnder/Movie-Database-COMP-2406#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "faker": "^5.4.0",
+    "mongoose": "^5.12.0",
+    "pug": "^3.0.2"
+  }
+}

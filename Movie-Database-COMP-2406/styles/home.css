@@ -1,0 +1,25 @@
+.movie-display{
+    position: relative;
+    margin:auto;
+    width:75%;
+    top: 15px;
+    padding: 10px;
+}
+
+.movie-list{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.movie-img{
+    margin:5px;
+    display: inline-block;
+    width: 250px;
+    height: 400px;
+}
+
+@media only screen and (max-width: 730px) {
+    #main{
+        flex-wrap: wrap;
+    }
+}

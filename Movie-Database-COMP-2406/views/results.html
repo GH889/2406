@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="results.css">
+    <script src="header.js"></script>
+    <script src="results.js"></script>
+    <title>Search Results</title>
+</head>
+
+<body onload="init()">
+    <div id="header" class="dark-bg dark-bg-text">
+        <a id="sitetitle" href="#" class="dark-bg dark-bg-text"><span class="highlighted-text">DIONYSUS</span> MOVIE
+            PROJECT</a>
+        <span class="navigation">
+            <form id="search" action="/movies">
+                <input id="rating-filter" type="hidden" name="rating" value="">
+                <input id="year-filter" type="hidden" name="year" value="">
+                <input id="query" name="query" type="text" placeholder="Search Movies">
+                <button id="btnsubmit" type="submit" class="btn-style header-btn dark-bg dark-bg-text">SEARCH</button>
+                <a href="#"><button id="login" class="btn-style header-btn dark-bg dark-bg-text">LOG IN</button></a>
+                <button id="user" class="btn-style header-btn dark-bg dark-bg-text">USERNAME</button>
+            </form>
+        </span>
+    </div>
+    <div id="main" class="light-bg light-bg-text">
+        <div id="filters" class="sidebar dark-bg dark-bg-text">
+            <div>
+                <button id="apply-filters" class="btn-style dark-bg dark-bg-text">Apply Filters</button>
+            </div>
+            <div id="rating">
+                <h3>
+                    Rating
+                </h3>
+                <div>
+                    <input id="g" type="radio" class="filter" name="rating" value="g">
+                    <label for="g">G</label>
+                </div>
+                <div>
+                    <input id="pg" type="radio" class="filter" name="rating" value="pg">
+                    <label for="pg">PG</label>
+                </div>
+                <div>
+                    <input id="pg13" type="radio" class="filter" name="rating" value="pg13">
+                    <label for="pg13">PG-13</label>
+                </div>
+                <div>
+                    <input id="r" type="radio" class="filter" name="rating" value="r">
+                    <label for="r">R</label>
+                </div>
+                <div>
+                    <input id="nc17" type="radio" class="filter" name="rating" value="nc17">
+                    <label for="nc17">NC-17</label>
+                </div>
+                <div>
+                    <input id="clear" type="radio" class="filter" name="rating" value="">
+                    <label for="clear">Clear</label>
+                </div>
+            </div>
+            <div id="year">
+                <h3>
+                    Release Year
+                </h3>
+                <div>
+                    <input id="1950" type="radio" class="filter" name="year" value="1950">
+                    <label for="1950">1950-1959</label>
+                </div>
+                <div>
+                    <input id="1960" type="radio" class="filter" name="year" value="1960">
+                    <label for="1960">1960-1969</label>
+                </div>
+                <div>
+                    <input id="1970" type="radio" class="filter" name="year" value="1970">
+                    <label for="1970">1970-1979</label>
+                </div>
+                <div>
+                    <input id="1980" type="radio" class="filter" name="year" value="1980">
+                    <label for="1980">1980-1989</label>
+                </div>
+                <div>
+                    <input id="1990" type="radio" class="filter" name="year" value="1990">
+                    <label for="1990">1990-1999</label>
+                </div>
+                <div>
+                    <input id="2000" type="radio" class="filter" name="year" value="2000">
+                    <label for="2000">2000-2009</label>
+                </div>
+                <div>
+                    <input id="2010" type="radio" class="filter" name="year" value="2010">
+                    <label for="2010">2010-2019</label>
+                </div>
+                <div>
+                    <input id="2020" type="radio" class="filter" name="year" value="2020">
+                    <label for="2020">2020-2029</label>
+                </div>
+                <div>
+                    <input id="clear" type="radio" class="filter" name="year" value="">
+                    <label for="clear">Clear</label>
+                </div>
+            </div>
+        </div>
+        <div id="results">
+            <div class="row">
+                <div class="column">
+                    <a href="/movies/example-id" class="poster-holder">
+                        <div>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BMTQwMjkwNjE0Ml5BMl5BanBnXkFtZTgwOTU5ODIyMTE@._V1_SX300.jpg">
+                            <span class="title">
+                                The Ballad of Cable Hogue
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="column">
+                    <a href="/movies/example-id" class="poster-holder">
+                        <div>
+                            <img
+                                src="https://m.media-amazon.com/images/M/MV5BYjJhOWM3YzMtMzE4Ny00YWE4LWFjZGItYjZkYmRlYTVlMmE5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
+                            <span class="title">
+                                The Out-of-Towners
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
